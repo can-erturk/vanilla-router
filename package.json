@@ -1,0 +1,8 @@
+{
+    "name": "vanilla-router-dom",
+    "version": "1.0.0",
+    "description": "Vanilla Javascript Document Object Model Router Plugin",
+    "main": "index.js",
+    "author": "Mehmet Can Erturk",
+    "license": "MIT"
+}  
