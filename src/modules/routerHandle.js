@@ -1,4 +1,5 @@
 import Utils from './Utils.js'
+import RouterUpdate from './routerUpdate.js'
 
 
 class RouterHandle {
@@ -10,8 +11,10 @@ class RouterHandle {
 
         if (page) {
             // route found
+            RouterUpdate.contentUpdate(page)
         } else if (notFound) {
             // route not found
+            RouterUpdate.contentUpdate(notFound)
         }
     }
 }
