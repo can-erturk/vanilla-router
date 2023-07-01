@@ -1,3 +1,6 @@
+import Utils from './Utils.js'
+
+
 class Helpers {
     static generateAbsolutePath(path) {
         
@@ -7,11 +10,11 @@ class Helpers {
         }
 
         // Adding the "/project/rootExample/" directory to the beginning of the given value
-        if (!path.includes('/router/')) {
+        if (!path.includes(Utils.options.root)) {
             if (!path.startsWith("/")) {
-                path = '/router/' + path
+                path = Utils.options.root + path
             } else {
-                path = '/router/' + path.substr(1)
+                path = Utils.options.root + path.substr(1)
             }
         }
 
