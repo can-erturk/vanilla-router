@@ -29,3 +29,6 @@ class RouterRoot extends HTMLElement {
         this.parentNode.replaceChild(root, this)
     }
 }
+
+
+export { RouterPage, RouterRoot }
