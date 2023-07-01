@@ -2,7 +2,7 @@ class Utils {
     static options = {
         root: '',
         pages: {},
-        defaultHead: ''
+        defaultHead: document.head.innerHTML
     }
 }
 
