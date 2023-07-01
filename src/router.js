@@ -1,5 +1,11 @@
+import Utils from './modules/Utils.js'
 import { RouterPage, RouterRoot } from './modules/routerDom.js'
 import RouterHandle from './modules/routerHandle.js'
+
+
+// Add data-root attribute coming from <router-root> element to options object in Utils.js
+const root = document.querySelector('router-root')
+Utils.options.root = root.getAttribute('data-root')
 
 
 // Defining HTML elements that can be used as <router-root> and <router-page>
