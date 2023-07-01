@@ -19,3 +19,13 @@ class RouterPage extends HTMLElement {
         }
     }
 }
+
+
+class RouterRoot extends HTMLElement {
+    connectedCallback() {
+        const root = document.createElement('div')
+        root.setAttribute('id', 'root')
+
+        this.parentNode.replaceChild(root, this)
+    }
+}
