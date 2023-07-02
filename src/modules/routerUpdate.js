@@ -17,16 +17,59 @@ class RouterUpdate {
     }
 
 
+    static scriptUpdate = (page) => {
+
+        // Remove old scripts defined in subpages
+        document.querySelectorAll('[data-routing-script]').forEach(el => {
+            document.body.removeChild(el)
+        })
+
+
+        // Extract the 'script' tags from within 'newPage'
+        const selectScriptTags = /<script\b[^>]*>([\s\S]*?)<\/script>/g
+        const matchedScripts = page.match(selectScriptTags)
+
+
+        // If a 'script' tag is found
+        if (matchedScripts) {
+            for (let i = 0; i < matchedScripts.length; i++) {
+
+                // Create a new script
+                const script = document.createElement('script')
+                script.setAttribute('data-routing-script', '')            
+
+
+                // Parse script from the new page and use its contents
+                const getScriptContent = /<script\b[^>]*>(.*?)<\/script>/i
+                const scriptContent = matchedScripts[i].match(getScriptContent)
+
+
+                // If there is script content, add it to the newly created
+                if (scriptContent && scriptContent[1]) {
+                    script.innerHTML = scriptContent[1]
+                }
+
+
+                // Add the newly created script to the end of the body
+                document.body.appendChild(script)
+            }
+        }
+    }    
+
+    
     static contentUpdate = async (page) => {
         const response = await fetch(page)
         const newPage = await response.text()
 
         const regexForHead = /<head>.*<\/head>/s
+        const regexForScript = /<script\b[^>]*>([\s\S]*?)<\/script>/g
         
-        const newHtml = newPage.replace(regexForHead, '')
+        let newHtml = newPage.replace(regexForHead, '')
+        newHtml = newHtml.replace(regexForScript, '')
         document.querySelector('#root').innerHTML = newHtml
 
         this.headUpdate(newPage)
+        this.scriptUpdate(newPage)
     }
 
 }
