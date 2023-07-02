@@ -1,4 +1,5 @@
 import Utils from './Utils.js';
+import Helpers from './Helpers.js';
 
 
 class RouterUpdate {
@@ -47,6 +48,21 @@ class RouterUpdate {
                 // If there is script content, add it to the newly created
                 if (scriptContent && scriptContent[1]) {
                     script.innerHTML = scriptContent[1]
+                }
+
+
+                // Parse script from the new page and dont use its contents
+                const getScriptWithoutContent = /(<script[^>]*>)[\s\S]*?(<\/script>)/g
+                const scriptWithoutContent = matchedScripts[i].replace(getScriptWithoutContent, '$1$2')
+                
+
+                // Define the attributes within an object.
+                const scriptAttributes = Helpers.parseAttributes(scriptWithoutContent)
+
+
+                // Adding the values in the 'attributes' object to new script element
+                for(let attribute in scriptAttributes) {
+                    script.setAttribute(attribute, scriptAttributes[attribute])
                 }
 
 
