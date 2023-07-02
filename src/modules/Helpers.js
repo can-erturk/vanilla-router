@@ -20,6 +20,30 @@ class Helpers {
 
         return path
     }
+
+
+    static parseAttributes(tag) {
+        const attributes = {}
+
+        // Regex for captures attributes with their values
+        const regexForAttributes = /(\w+(?:-\w+)*)\s*(?:=\s*(?:(?:"([^"]*)")|(?:'([^']*)')|(\S+?(?=\s|$)|\S+)))?/g;
+    
+        // This loop filters attribute key-value pairs from a given tag
+        for (const match of tag.matchAll(regexForAttributes)) {
+            const key = match[1]
+            const value = match[2]
+
+            /* 
+                If the attribute name is not equal to 'script', 
+                it is assigned to the 'attributes' object along with its value.
+            */
+            if (key !== 'script') {
+                attributes[key] = value ?? '';
+            }
+        }
+    
+        return attributes
+    }
 }
 
 export default Helpers
