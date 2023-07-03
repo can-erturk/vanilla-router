@@ -2,7 +2,7 @@
     "name": "vanilla-router-dom",
     "version": "1.0.1",
     "description": "Modern Vanilla Javascript routing library.",
-    "main": "index.js",
+    "main": "./build/vanilla-router.min.js",
     "author": "Mehmet Can E.",
     "license": "MIT",
     "repository": {
