@@ -4,7 +4,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: "production",
-    entry: './src/router.js',
+    entry: './src/vanilla-router.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: './vanilla-router.min.js',
