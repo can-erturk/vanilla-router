@@ -3,6 +3,17 @@
     "version": "1.0.0",
     "description": "Vanilla Javascript Document Object Model Router Plugin",
     "main": "index.js",
-    "author": "Mehmet Can Erturk",
-    "license": "MIT"
+    "author": "Mehmet Can E.",
+    "license": "MIT",
+    "scripts": {
+        "build": "webpack --config webpack.config.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.22.5",
+        "@babel/preset-env": "^7.22.5",
+        "babel-loader": "^9.1.2",
+        "terser-webpack-plugin": "^5.3.9",
+        "webpack": "^5.88.1",
+        "webpack-cli": "^5.1.4"
+    }
 }  
