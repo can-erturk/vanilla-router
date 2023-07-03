@@ -1,10 +1,14 @@
 {
     "name": "vanilla-router-dom",
-    "version": "1.0.0",
-    "description": "Vanilla Javascript Document Object Model Router Plugin",
+    "version": "1.0.1",
+    "description": "Modern Vanilla Javascript routing library.",
     "main": "index.js",
     "author": "Mehmet Can E.",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/meecan/vanilla-router-dom"
+    },
     "scripts": {
         "build": "webpack --config webpack.config.js"
     },
