@@ -5,5 +5,5 @@
 
 The contents of this README.md file will be updated shortly.
 
-## See on the npmjs:
-https://www.npmjs.com/package/vanilla-router-dom
+## Install with NPM:
+npm install vanilla-router-dom
