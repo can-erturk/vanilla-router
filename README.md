@@ -6,4 +6,4 @@
 The contents of this README.md file will be updated shortly.
 
 ## Install with NPM:
-npm install vanilla-router-dom
+[npm install vanilla-router-dom](https://www.npmjs.com/package/vanilla-router-dom)
