@@ -5,7 +5,8 @@
 
 Vanilla Router for client side routing, inspired by [React Router](https://reactrouter.com/).
 
-Documentation can be found on our [website](https://meecan.github.io/docs/vanilla-router/).
+## See documentation:
+https://meecan.github.io/docs/vanilla-router/
 
 
 ## Contents:
