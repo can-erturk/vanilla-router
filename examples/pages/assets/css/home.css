@@ -1,0 +1,15 @@
+h1{
+    animation: transform-animate 2s infinite;
+}
+
+@keyframes transform-animate {
+    0%{
+        transform: scaleX(.9);
+    }
+    50%{
+        transform: scaleX(1.15);
+    }
+    100%{
+        transform: scaleX(.9);
+    }
+}

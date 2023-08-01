@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- target="_self" is required -->
+    <nav>
+        <a href="./" target="_self">Home</a>
+        <a href="./about" target="_self">About</a>
+        <a href="./github" target="_self">Github</a>
+    </nav>
+
+    <!-- Enter your project directory in data-root="..." -->
+    <router-root data-root="/projects/git/vanilla-router-dom/examples/">
+        <router-page data-path="*" data-src="pages/404.html" />
+        <router-page data-path="./" data-src="pages/home.html" />
+        <router-page data-path="./about" data-src="pages/about.html" />
+        <router-page data-path="./github" data-src="pages/github.html" />
+    </router-root>
+
+    <script src="./../build/vanilla-router.min.js"></script>
+</body>
+</html>
