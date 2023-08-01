@@ -1,17 +1,16 @@
 import Utils from './Utils.js'
 
-
 class Helpers {
     static generateAbsolutePath(path) {
         
         // Converting "./example" to "example"
-        if (path.startsWith("./")) {
+        if (path.startsWith('./')) {
             path = path.substr(2)
         }
 
         // Adding the "/project/rootExample/" directory to the beginning of the given value
         if (!path.includes(Utils.options.root)) {
-            if (!path.startsWith("/")) {
+            if (!path.startsWith('/')) {
                 path = Utils.options.root + path
             } else {
                 path = Utils.options.root + path.substr(1)
@@ -21,12 +20,11 @@ class Helpers {
         return path
     }
 
-
     static parseAttributes(tag) {
         const attributes = {}
 
         // Regex for captures attributes with their values
-        const regexForAttributes = /(\w+(?:-\w+)*)\s*(?:=\s*(?:(?:"([^"]*)")|(?:'([^']*)')|(\S+?(?=\s|$)|\S+)))?/g;
+        const regexForAttributes = /(\w+(?:-\w+)*)\s*(?:=\s*(?:(?:"([^"]*)")|(?:'([^']*)')|(\S+?(?=\s|$)|\S+)))?/g
     
         // This loop filters attribute key-value pairs from a given tag
         for (const match of tag.matchAll(regexForAttributes)) {
@@ -38,7 +36,7 @@ class Helpers {
                 it is assigned to the 'attributes' object along with its value.
             */
             if (key !== 'script') {
-                attributes[key] = value ?? '';
+                attributes[key] = value ?? ''
             }
         }
     

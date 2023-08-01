@@ -1,13 +1,11 @@
 import Utils from './Utils.js'
 import RouterUpdate from './routerUpdate.js'
 
-
 class RouterHandle {
     static handle = async () => {    
         const url = window.location.pathname
         const page = Utils.options.pages[url]
         const notFound = Utils.options.pages['*']
-    
 
         if (page) {
             // route found
@@ -18,6 +16,5 @@ class RouterHandle {
         }
     }
 }
-
 
 export default RouterHandle

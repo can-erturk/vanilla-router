@@ -1,7 +1,6 @@
 import Utils from './Utils.js'
 import Helpers from './Helpers.js'
 
-
 class RouterPage extends HTMLElement {
     connectedCallback() {
         const path = this.dataset.path
@@ -20,7 +19,6 @@ class RouterPage extends HTMLElement {
     }
 }
 
-
 class RouterRoot extends HTMLElement {
     connectedCallback() {
         const root = document.createElement('div')
@@ -29,6 +27,5 @@ class RouterRoot extends HTMLElement {
         this.parentNode.replaceChild(root, this)
     }
 }
-
 
 export { RouterPage, RouterRoot }
