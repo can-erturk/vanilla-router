@@ -8,11 +8,12 @@ Vanilla Router for client side routing, inspired by [React Router](https://react
 ## See documentation:
 https://meecan.github.io/docs/vanilla-router/
 
+## See examples:
+https://github.com/meecan/vanilla-router-dom/tree/main/examples
 
 ## Contents:
 - [Feature Overview](https://meecan.github.io/docs/vanilla-router/start/overview)
 - [Faqs](https://meecan.github.io/docs/vanilla-router/start/faqs)
-- [Examples](https://meecan.github.io/docs/vanilla-router/start/examples)
 - [Installation](https://meecan.github.io/docs/vanilla-router/start/installation)
 - [Create a Router](https://meecan.github.io/docs/vanilla-router/routing/create-a-router)
 - [Giving a Link](https://meecan.github.io/docs/vanilla-router/routing/giving-a-link)
