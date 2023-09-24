@@ -1,18 +1,39 @@
-import Utils from './Utils.js'
 import Helpers from './Helpers.js'
 
 class RouterUpdate {
     static headUpdate = (page) => {
-        const regex = /<head>([^]*?)<\/head>/i
-        const matches = page.match(regex)
+        
+        // Use DOMParser to extract the head content
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(page, 'text/html')
+        const newHead = doc.querySelector('head')
+      
+        // If there is no new head content, return
+        if (!newHead) return
+      
+        // Remove existing elements with the 'data-routing-tag' attribute
+        const existingElements = document.head.querySelectorAll('[data-routing-tag]')
+        existingElements.forEach(el => {
+            document.head.removeChild(el)
+        })
+      
+        // List of tags to process
+        const tagsToProcess = ['meta', 'title', 'link', 'style', 'base', 'noscript']
 
-        if (!matches || matches.length <= 1) {
-            return
-        }
+        // Process the selected tags
+        tagsToProcess.forEach(name => {
+            const elements = newHead.getElementsByTagName(name)
 
-        const { defaultHead } = Utils.options
-        const newHead = matches[1].trim()
-        document.head.innerHTML = `${defaultHead} ${newHead}`
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i]
+                
+                // Add the "data-routing-tag" attribute
+                element.setAttribute('data-routing-tag', '')
+                
+                // Append a clone of the element
+                document.head.appendChild(element.cloneNode(true))
+            }
+        })
     }
 
     static scriptUpdate = (page) => {
