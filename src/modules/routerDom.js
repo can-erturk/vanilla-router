@@ -8,13 +8,14 @@ class RouterPage extends HTMLElement {
 
         // Get edited url
         const absolutePath = Helpers.generateAbsolutePath(path)
+        const absoluteSrc = Helpers.generateAbsolutePath(src)
 
         if (path === '*') {
             // If the existing router paths and the browser URL do not match, which router path will be used (404)
-            Utils.options.pages['*'] = src
+            Utils.options.pages['*'] = absoluteSrc
         } else {
             // Which file should be called when which router path is requested
-            Utils.options.pages[absolutePath] = src
+            Utils.options.pages[absolutePath] = absoluteSrc
         }
     }
 }
