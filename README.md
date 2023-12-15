@@ -1,9 +1,9 @@
-# Welcome to Vanilla Router Dom
+# Welcome to Vanilla Router
 
 [npm-badge]: https://img.shields.io/npm/v/vanilla-router-dom.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/vanilla-router-dom
 
-[Vanilla Router](https://vanillarouter.js.org/) for client side routing, inspired by [React Router](https://reactrouter.com/).
+[Vanilla Router Dom](https://vanillarouter.js.org/) for client side routing, inspired by [React Router](https://reactrouter.com/).
 
 ## See documentation:
 [https://vanillarouter.js.org/](https://vanillarouter.js.org/)
